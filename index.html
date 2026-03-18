@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="blue">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Teresa Jency Bala | Cybersecurity Explorer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+<style>
+[data-theme="blue"]{--bg:#f0f4ff;--bg2:#eaedfa;--card:#fff;--nav-bg:rgba(240,244,255,0.93);--primary:#1e3a8a;--primary2:#2563eb;--accent2:#14b8a6;--pop2:#8b5cf6;--navy:#0f172a;--ink:#1e293b;--ink2:#475569;--ink3:#94a3b8;--border:rgba(30,58,138,0.13);--shadow:0 4px 24px rgba(30,58,138,0.09);--shadow2:0 10px 40px rgba(109,40,217,0.13);--name-grad:linear-gradient(135deg,#1e3a8a 0%,#0d9488 50%,#6d28d9 100%);--btn-grad:linear-gradient(135deg,#1e3a8a,#0d9488);--bar-grad:linear-gradient(90deg,#1e3a8a,#0d9488,#6d28d9);--ring-grad:conic-gradient(#1e3a8a,#0d9488,#6d28d9,#14b8a6,#2563eb,#1e3a8a);--tag-col:#0d9488;--tag-gem:#8b5cf6;--chip-bg:rgba(109,40,217,0.06);--chip-bdr:rgba(109,40,217,0.2);--chip-col:#6d28d9;--stat-grad:linear-gradient(135deg,#1e3a8a,#0d9488);--hover-col:#0d9488;--blob1:rgba(30,58,138,0.1);--blob2:rgba(13,148,136,0.09);--blob3:rgba(109,40,217,0.07);}
+[data-theme="crimson"]{--bg:#fdf6ee;--bg2:#f7ede0;--card:#fff;--nav-bg:rgba(253,246,238,0.93);--primary:#c1121f;--primary2:#e63946;--accent2:#c2410c;--pop2:#b45309;--navy:#1c0a00;--ink:#1e293b;--ink2:#475569;--ink3:#94a3b8;--border:rgba(193,18,31,0.12);--shadow:0 4px 24px rgba(193,18,31,0.09);--shadow2:0 10px 40px rgba(193,18,31,0.14);--name-grad:linear-gradient(135deg,#c1121f 0%,#9a3412 40%,#b45309 100%);--btn-grad:linear-gradient(135deg,#c1121f,#e63946);--bar-grad:linear-gradient(90deg,#c1121f,#b45309,#e63946);--ring-grad:conic-gradient(#c1121f,#f59e0b,#9a3412,#e63946,#b45309,#c1121f);--tag-col:#c1121f;--tag-gem:#b45309;--chip-bg:rgba(193,18,31,0.06);--chip-bdr:rgba(193,18,31,0.2);--chip-col:#c1121f;--stat-grad:linear-gradient(135deg,#c1121f,#b45309);--hover-col:#c1121f;--blob1:rgba(193,18,31,0.08);--blob2:rgba(26,58,143,0.07);--blob3:rgba(201,130,10,0.06);}
+[data-theme="dark"]{--bg:#050e0a;--bg2:#081208;--card:#0f1f13;--nav-bg:rgba(5,14,10,0.93);--primary:#15803d;--primary2:#16a34a;--accent2:#0f9174;--pop2:#065f46;--navy:#f0fdf4;--ink:#dcfce7;--ink2:#86efac;--ink3:#4ade80;--border:rgba(21,128,61,0.22);--shadow:0 4px 24px rgba(0,0,0,0.4);--shadow2:0 10px 40px rgba(21,128,61,0.2);--name-grad:linear-gradient(135deg,#22c55e 0%,#34d399 50%,#6ee7b7 100%);--btn-grad:linear-gradient(135deg,#15803d,#0d6c5a);--bar-grad:linear-gradient(90deg,#15803d,#34d399,#0d6c5a);--ring-grad:conic-gradient(#15803d,#34d399,#0d6c5a,#22c55e,#6ee7b7,#15803d);--tag-col:#34d399;--tag-gem:#6ee7b7;--chip-bg:rgba(21,128,61,0.15);--chip-bdr:rgba(21,128,61,0.35);--chip-col:#34d399;--stat-grad:linear-gradient(135deg,#22c55e,#34d399);--hover-col:#34d399;--blob1:rgba(21,128,61,0.12);--blob2:rgba(13,108,90,0.1);--blob3:rgba(6,78,59,0.08);}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif;overflow-x:hidden;transition:background .4s,color .4s}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--bg2)}
+::-webkit-scrollbar-thumb{background:var(--bar-grad);border-radius:10px}
+#sparkle-canvas{position:fixed;inset:0;pointer-events:none;z-index:0;opacity:0.35}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:1rem 3rem;background:var(--nav-bg);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);transition:background .4s}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;background:var(--btn-grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.nav-links{display:flex;gap:1.8rem;list-style:none}
+.nav-links a{font-family:'Space Mono',monospace;font-size:.65rem;color:var(--ink2);text-decoration:none;letter-spacing:.1em;text-transform:uppercase;transition:color .2s}
+.nav-links a:hover{color:var(--hover-col)}
+.nav-themes{display:flex;align-items:center;gap:.45rem;border-left:1px solid var(--border);padding-left:1.2rem;margin-left:.5rem}
+.theme-label{font-family:'Space Mono',monospace;font-size:.5rem;color:var(--ink3);letter-spacing:.08em;text-transform:uppercase}
+.theme-btn{width:18px;height:18px;border-radius:50%;border:2.5px solid transparent;cursor:pointer;flex-shrink:0;padding:0;transition:transform .2s,border-color .3s}
+.theme-btn:hover{transform:scale(1.25)}
+.theme-btn.active{border-color:var(--ink);transform:scale(1.2)}
+.theme-btn-blue{background:linear-gradient(135deg,#1e3a8a,#0d9488)}
+.theme-btn-crimson{background:linear-gradient(135deg,#c1121f,#b45309)}
+.theme-btn-dark{background:linear-gradient(135deg,#15803d,#0d6c5a)}
+
+#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:7rem 3.5rem 4rem;position:relative;overflow:hidden;z-index:1}
+.hero-blob{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none}
+.blob1{width:600px;height:600px;top:-160px;right:-100px;background:radial-gradient(circle,var(--blob1),transparent 70%)}
+.blob2{width:480px;height:480px;bottom:-100px;left:-80px;background:radial-gradient(circle,var(--blob2),transparent 70%)}
+.blob3{width:320px;height:320px;top:35%;left:38%;background:radial-gradient(circle,var(--blob3),transparent 70%)}
+.hero-deco{position:absolute;top:6rem;right:3rem;width:160px;height:160px;opacity:0.06;background-image:repeating-linear-gradient(45deg,var(--primary) 0,var(--primary) 1px,transparent 1px,transparent 12px)}
+.hero-inner{display:grid;grid-template-columns:1fr auto;gap:5rem;align-items:center;position:relative;z-index:2}
+
+.photo-outer{position:relative;flex-shrink:0}
+.photo-wrap{position:relative;width:240px;height:240px}
+.photo-ring{position:absolute;inset:-7px;border-radius:50%;background:var(--ring-grad);animation:spin 5s linear infinite}
+.photo-ring::after{content:'';position:absolute;inset:5px;border-radius:50%;background:var(--bg);transition:background .4s}
+@keyframes spin{to{transform:rotate(360deg)}}
+.photo-img{position:relative;z-index:1;width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:top}
+.diam-float{position:absolute;font-size:1.1rem;animation:floatd 3s ease-in-out infinite;pointer-events:none}
+.diam-float:nth-child(1){top:-10px;left:20px;animation-delay:0s}
+.diam-float:nth-child(2){top:30px;right:-20px;animation-delay:.9s}
+.diam-float:nth-child(3){bottom:20px;right:-15px;animation-delay:1.7s}
+.diam-float:nth-child(4){bottom:-8px;left:30px;animation-delay:2.5s}
+@keyframes floatd{0%,100%{transform:translateY(0) scale(1);opacity:.7}50%{transform:translateY(-9px) scale(1.2);opacity:1}}
+
+.hero-tag{font-family:'Space Mono',monospace;font-size:.7rem;color:var(--tag-col);letter-spacing:.2em;text-transform:uppercase;margin-bottom:1.2rem;display:flex;align-items:center;gap:.6rem}
+.gem{color:var(--tag-gem);animation:pulsegem 2s ease-in-out infinite;display:inline-block}
+@keyframes pulsegem{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.5)}}
+h1.hero-name{font-family:'Playfair Display',serif;font-size:clamp(3rem,7vw,6.5rem);font-weight:900;line-height:.95;letter-spacing:-.02em;color:var(--navy);margin-bottom:.4rem;transition:color .4s}
+.name-color{background:var(--name-grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-family:'Space Mono',monospace;font-size:.74rem;color:var(--ink2);letter-spacing:.05em;margin-bottom:1.5rem;line-height:1.7}
+.hero-desc{max-width:540px;font-size:1rem;line-height:1.85;color:var(--ink2);margin-bottom:2.5rem}
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2.5rem}
+.btn-primary{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 2rem;background:var(--btn-grad);color:#fff;font-family:'Space Mono',monospace;font-size:.74rem;font-weight:700;letter-spacing:.1em;text-decoration:none;text-transform:uppercase;border-radius:3px;transition:box-shadow .3s,transform .2s}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,0.22)}
+.btn-outline{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 2rem;border:1.5px solid var(--pop2);color:var(--pop2);font-family:'Space Mono',monospace;font-size:.74rem;font-weight:700;letter-spacing:.1em;text-decoration:none;text-transform:uppercase;border-radius:3px;transition:background .2s,transform .2s}
+.btn-outline:hover{background:rgba(0,0,0,.05);transform:translateY(-2px)}
+[data-theme="dark"] .btn-outline{color:var(--accent2);border-color:var(--accent2)}
+.social-row{display:flex;gap:.5rem;flex-wrap:wrap}
+.sp{display:inline-flex;align-items:center;font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.07em;text-transform:uppercase;text-decoration:none;padding:.26rem .68rem;border-radius:999px;border:1px solid var(--border);color:var(--ink2);transition:color .2s,border-color .2s}
+.sp:hover{color:var(--hover-col);border-color:var(--accent2)}
+
+section{padding:5.5rem 3.5rem;position:relative;z-index:1;transition:background .4s}
+.alt-bg{background:var(--bg2)}
+.sec-head{display:flex;align-items:center;gap:1rem;margin-bottom:3rem}
+.sec-num{font-family:'Space Mono',monospace;font-size:.68rem;color:var(--accent2);letter-spacing:.15em}
+.sec-title{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,3vw,2.1rem);font-weight:700;color:var(--navy)}
+.sec-line{flex:1;height:1px;background:var(--border)}
+.sec-gem{font-size:.85rem;animation:pulsegem 2.5s ease-in-out infinite}
+
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.about-text p{line-height:1.9;color:var(--ink2);margin-bottom:1.1rem;font-size:.97rem}
+.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.stat-card{padding:1.6rem;border-radius:6px;background:var(--card);border:1px solid var(--border);box-shadow:var(--shadow);position:relative;overflow:hidden;transition:background .4s}
+.stat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--bar-grad)}
+.stat-n{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;background:var(--stat-grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat-l{font-size:.76rem;color:var(--ink2);margin-top:.25rem}
+.links-cluster{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:2rem}
+.lc{display:inline-flex;align-items:center;font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:.07em;text-transform:uppercase;text-decoration:none;padding:.3rem .72rem;border-radius:3px;border:1px solid var(--border);color:var(--ink2);transition:all .2s}
+.lc:hover{color:var(--primary);border-color:var(--primary)}
+
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.1rem}
+.sk-group{padding:1.7rem;border:1px solid var(--border);background:var(--card);border-radius:6px;box-shadow:var(--shadow);transition:border-color .3s,background .4s}
+.sk-group:hover{border-color:var(--accent2)}
+.sk-label{font-family:'Space Mono',monospace;font-size:.63rem;color:var(--primary);letter-spacing:.18em;text-transform:uppercase;margin-bottom:1rem;display:flex;align-items:center;gap:.5rem}
+.sk-label::after{content:'';flex:1;height:1px;background:var(--border)}
+.sk-tags{display:flex;flex-wrap:wrap;gap:.5rem}
+.sk-tag{font-family:'Space Mono',monospace;font-size:.66rem;padding:.24rem .63rem;border-radius:3px;background:rgba(0,0,0,.03);border:1px solid var(--border);color:var(--ink)}
+[data-theme="dark"] .sk-tag{background:rgba(21,128,61,.08);color:var(--ink2)}
+
+.timeline{position:relative}
+.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--bar-grad);border-radius:2px}
+.tl-item{padding:0 0 3rem 2.5rem;position:relative}
+.tl-dot{position:absolute;left:-5px;top:5px;width:12px;height:12px;border-radius:50%;background:var(--btn-grad);box-shadow:0 0 12px rgba(0,0,0,.25)}
+.tl-date{font-family:'Space Mono',monospace;font-size:.66rem;color:var(--accent2);letter-spacing:.15em;text-transform:uppercase;margin-bottom:.4rem}
+.tl-role{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--navy);margin-bottom:.2rem}
+.tl-org{font-family:'Space Mono',monospace;font-size:.72rem;color:var(--ink2);margin-bottom:.9rem}
+.tl-body{font-size:.87rem;line-height:1.8;color:var(--ink2)}
+.tl-chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.9rem}
+.chip{font-family:'Space Mono',monospace;font-size:.62rem;padding:.2rem .6rem;border-radius:3px;background:var(--chip-bg);border:1px solid var(--chip-bdr);color:var(--chip-col)}
+
+.edu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.1rem}
+.edu-card{padding:1.7rem;border-radius:6px;border:1px solid var(--border);background:var(--card);box-shadow:var(--shadow);position:relative;overflow:hidden;transition:transform .3s,background .4s}
+.edu-card:hover{transform:translateY(-4px);box-shadow:var(--shadow2)}
+.edu-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--bar-grad);transform:scaleX(0);transform-origin:left;transition:transform .4s}
+.edu-card:hover::after{transform:scaleX(1)}
+.edu-gem{position:absolute;top:1rem;right:1.2rem;font-size:.7rem;color:var(--pop2)}
+.edu-deg{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:.4rem}
+.edu-inst{font-size:.78rem;color:var(--ink2);margin-bottom:.9rem;line-height:1.5}
+.edu-pills{display:flex;gap:.5rem;flex-wrap:wrap}
+.edu-pill{font-family:'Space Mono',monospace;font-size:.61rem;padding:.2rem .6rem;border-radius:3px;background:var(--chip-bg);border:1px solid var(--chip-bdr);color:var(--primary2)}
+
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.1rem}
+.proj-card{padding:1.9rem;border-radius:6px;border:1px solid var(--border);background:var(--card);box-shadow:var(--shadow);transition:transform .3s,background .4s;position:relative;overflow:hidden}
+.proj-card:hover{transform:translateY(-5px);box-shadow:var(--shadow2)}
+.proj-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--bar-grad);transform:scaleX(0);transform-origin:left;transition:transform .4s}
+.proj-card:hover::after{transform:scaleX(1)}
+.proj-icon{font-size:1.9rem;margin-bottom:1rem}
+.proj-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:.55rem}
+.proj-desc{font-size:.84rem;line-height:1.7;color:var(--ink2);margin-bottom:1rem}
+.proj-link{font-family:'Space Mono',monospace;font-size:.67rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent2);text-decoration:none}
+.proj-link:hover{color:var(--primary)}
+
+.thesis-box{padding:2.2rem;border-radius:6px;background:var(--card);border:1px solid var(--border);margin-bottom:2rem;position:relative;box-shadow:var(--shadow);transition:background .4s}
+.thesis-lbl{position:absolute;top:1.2rem;right:1.5rem;font-family:'Space Mono',monospace;font-size:.56rem;background:var(--bar-grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:.2em}
+.thesis-title{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--navy);margin-bottom:.4rem}
+.thesis-meta{font-family:'Space Mono',monospace;font-size:.7rem;color:var(--ink2);margin-bottom:.8rem}
+.thesis-desc{font-size:.87rem;line-height:1.75;color:var(--ink2)}
+.pub-lbl{font-family:'Space Mono',monospace;font-size:.67rem;letter-spacing:.2em;text-transform:uppercase;color:var(--primary);margin-bottom:1rem;display:block;margin-top:2rem}
+.chap-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem}
+.chap-card{padding:1.4rem;border-radius:6px;border:1px solid var(--border);background:var(--card);box-shadow:var(--shadow);transition:border-color .3s,background .4s}
+.chap-card:hover{border-color:var(--accent2)}
+.chap-pub{font-family:'Space Mono',monospace;font-size:.6rem;color:var(--accent2);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.5rem}
+.chap-title{font-size:.86rem;font-weight:600;color:var(--ink);line-height:1.55}
+.chap-title a{color:inherit;text-decoration:none}
+.chap-title a:hover{color:var(--accent2)}
+.pub-list{display:flex;flex-direction:column;gap:.85rem}
+.pub-item{padding:1.2rem 1.5rem;border-radius:6px;border:1px solid var(--border);background:var(--card);box-shadow:var(--shadow);display:flex;gap:1rem;align-items:flex-start;transition:background .4s}
+.pub-year{font-family:'Space Mono',monospace;font-size:.63rem;color:var(--pop2);letter-spacing:.1em;flex-shrink:0;padding-top:.15rem}
+.pub-title{font-size:.86rem;font-weight:600;color:var(--ink);line-height:1.55}
+.pub-title a{color:inherit;text-decoration:none}
+.pub-title a:hover{color:var(--accent2)}
+.pub-authors{font-size:.74rem;color:var(--ink2);margin-top:.25rem}
+.pub-venue{font-family:'Space Mono',monospace;font-size:.63rem;color:var(--primary2);margin-top:.2rem}
+
+.srv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(195px,1fr));gap:1.1rem}
+.srv-card{padding:1.9rem 1.4rem;border-radius:6px;text-align:center;border:1px solid var(--border);background:var(--card);box-shadow:var(--shadow);transition:transform .3s,background .4s}
+.srv-card:hover{transform:translateY(-4px);box-shadow:var(--shadow2);border-color:var(--accent2)}
+.srv-icon{font-size:1.9rem;margin-bottom:.9rem}
+.srv-name{font-family:'Playfair Display',serif;font-size:.94rem;font-weight:700;color:var(--navy);margin-bottom:.4rem}
+.srv-desc{font-size:.76rem;color:var(--ink2);line-height:1.6}
+
+.cert-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(225px,1fr));gap:.85rem}
+.cert-item{display:flex;align-items:center;gap:.7rem;padding:.9rem 1.1rem;border-radius:6px;border:1px solid var(--border);background:var(--card);font-size:.79rem;color:var(--ink);text-decoration:none;box-shadow:var(--shadow);transition:border-color .2s,background .4s}
+.cert-item:hover{border-color:var(--accent2);box-shadow:var(--shadow2)}
+
+.ach-list{display:flex;flex-direction:column;gap:1rem}
+.ach-item{display:flex;gap:1.3rem;align-items:flex-start;padding:1.4rem 1.7rem;border-radius:6px;border:1px solid var(--border);background:var(--card);box-shadow:var(--shadow);transition:border-color .3s,background .4s}
+.ach-item:hover{border-color:var(--accent2)}
+.ach-ico{font-size:1.4rem;flex-shrink:0}
+.ach-txt{font-size:.87rem;line-height:1.75;color:var(--ink2)}
+.ach-txt strong{color:var(--navy);font-weight:700}
+
+.fun-grid{display:flex;flex-wrap:wrap;gap:1.2rem}
+.fun-card{display:flex;align-items:center;gap:1rem;padding:1.4rem 1.8rem;border-radius:6px;border:1px solid var(--border);background:var(--card);box-shadow:var(--shadow);text-decoration:none;transition:transform .2s,box-shadow .2s,background .4s;min-width:210px}
+.fun-card:hover{transform:translateY(-3px);box-shadow:var(--shadow2)}
+.fun-icon{font-size:2rem}
+.fun-name{font-family:'Playfair Display',serif;font-size:.94rem;font-weight:700;color:var(--navy)}
+.fun-sub{font-family:'Space Mono',monospace;font-size:.61rem;color:var(--ink2);margin-top:.2rem}
+
+#contact{text-align:center}
+.contact-wrap{max-width:580px;margin:0 auto}
+.contact-wrap p{font-size:.96rem;line-height:1.8;color:var(--ink2);margin-bottom:2rem}
+.contact-email{display:inline-block;font-family:'Space Mono',monospace;font-size:clamp(.88rem,2.2vw,1.1rem);background:var(--bar-grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none;margin-bottom:2.5rem;letter-spacing:.03em}
+.contact-email:hover{opacity:.75}
+.contact-socials{display:flex;justify-content:center;flex-wrap:wrap;gap:.65rem}
+
+@keyframes shimmer{0%{background-position:-200% center}100%{background-position:200% center}}
+.shimmer-text{background:var(--bar-grad);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 4s linear infinite}
+
+footer{padding:1.3rem 3.5rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;background:var(--bg2);transition:background .4s}
+footer p{font-family:'Space Mono',monospace;font-size:.65rem;color:var(--ink2)}
+footer a{font-family:'Space Mono',monospace;font-size:.65rem;color:var(--ink2);text-decoration:none;transition:color .2s}
+footer a:hover{color:var(--hover-col)}
+
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+
+@media(max-width:820px){
+  nav{padding:1rem 1.2rem}
+  .nav-links{display:none}
+  .nav-themes{margin-left:auto}
+  section{padding:4rem 1.5rem}
+  #hero{padding:5.5rem 1.5rem 3rem}
+  .hero-inner{display:flex;flex-direction:column-reverse;align-items:center;gap:2rem}
+  .photo-outer{display:flex;justify-content:center}
+  .photo-wrap{width:160px;height:160px}
+  .diam-float{font-size:.8rem}
+  .about-grid{grid-template-columns:1fr;gap:2.5rem}
+  footer{padding:1rem 1.5rem;flex-direction:column;gap:.4rem;text-align:center}
+}
+</style>
+</head>
+<body>
+<canvas id="sparkle-canvas"></canvas>
+
+<nav>
+  <div class="nav-logo">Teresa Jency Bala</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Exp</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-themes">
+    <span class="theme-label">Theme</span>
+    <button class="theme-btn theme-btn-blue active" data-theme="blue" title="Blue Teal Purple"></button>
+    <button class="theme-btn theme-btn-crimson" data-theme="crimson" title="Crimson Gold"></button>
+    <button class="theme-btn theme-btn-dark" data-theme="dark" title="Dark Royal Green"></button>
+  </div>
+</nav>
+
+<section id="hero">
+  <div class="hero-blob blob1"></div>
+  <div class="hero-blob blob2"></div>
+  <div class="hero-blob blob3"></div>
+  <div class="hero-deco"></div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-tag"><span class="gem">&#9670;</span> Cybersecurity Explorer &amp; Researcher <span class="gem">&#9670;</span></div>
+      <h1 class="hero-name">Teresa<br/><span class="name-color">Jency Bala</span></h1>
+      <p class="hero-sub">MSc @ Khulna University &#183; VAPT &#183; SIEM &#183; Web Security &#183; ML Research</p>
+      <p class="hero-desc">Navigating the cyber realm with curiosity, grit, and a sparkle &#10024; from penetration testing and malware removal to machine-learning-based intrusion detection and published research.</p>
+      <div class="hero-ctas">
+        <a href="mailto:teresajencybala.cse@gmail.com" class="btn-primary">&#10022; Get in Touch</a>
+        <a href="https://www.fiverr.com/teresabala" target="_blank" rel="noopener" class="btn-outline">&#9670; Hire on Fiverr</a>
+      </div>
+      <div class="social-row">
+        <a class="sp" href="https://www.linkedin.com/in/teresajencybala/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="sp" href="https://github.com/jencyyyyy" target="_blank" rel="noopener">GitHub</a>
+        <a class="sp" href="https://medium.com/@teresa11000" target="_blank" rel="noopener">Medium</a>
+        <a class="sp" href="https://scholar.google.com/citations?user=gsNwFVAAAAAJ&amp;hl=en" target="_blank" rel="noopener">Scholar</a>
+        <a class="sp" href="https://www.researchgate.net/profile/Teresa-Bala" target="_blank" rel="noopener">ResearchGate</a>
+        <a class="sp" href="https://tryhackme.com/r/p/jencyyy" target="_blank" rel="noopener">TryHackMe</a>
+        <a class="sp" href="https://www.hackerrank.com/profile/jencyyy" target="_blank" rel="noopener">HackerRank</a>
+        <a class="sp" href="https://www.credly.com/users/teresa-jency-bala" target="_blank" rel="noopener">Credly</a>
+        <a class="sp" href="https://orcid.org/0009-0002-6670-9904" target="_blank" rel="noopener">ORCiD</a>
+        <a class="sp" href="https://www.upwork.com/freelancers/~0192f0471d432a4f82" target="_blank" rel="noopener">Upwork</a>
+        <a class="sp" href="https://linktr.ee/teresajencybala" target="_blank" rel="noopener">Linktree</a>
+      </div>
+    </div>
+    <div class="photo-outer">
+      <span class="diam-float">&#128142;</span>
+      <span class="diam-float">&#10022;</span>
+      <span class="diam-float">&#128142;</span>
+      <span class="diam-float">&#9670;</span>
+      <div class="photo-wrap">
+        <div class="photo-ring"></div>
+        <img class="photo-img" src="photo.png" alt="Teresa Jency Bala"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="alt-bg">
+  <div class="sec-head"><span class="sec-num">01</span><h2 class="sec-title">About Me</h2><div class="sec-line"></div><span class="sec-gem">&#128142;</span></div>
+  <div class="about-grid fade-in">
+    <div class="about-text">
+      <p>I am Teresa, a cybersecurity practitioner, researcher, and CS student based in Khulna, Bangladesh. Currently pursuing my Master's at Khulna University with a perfect TGPA of 4.00/4.00 in my first year.</p>
+      <p>My work spans both offensive and defensive security: VAPT engagements, SIEM deployments (Wazuh and Splunk), website malware removal, and published research on ML-based intrusion detection and IoT security. I have 6 publications including 4 book chapters with Springer, Routledge, and CRC Press.</p>
+      <p>Level-1 seller in Fiverr. And I have helped clients across the globe secure their WordPress sites, blacklist removal, SEO spam cleanup, and full hardening. I believe every great defense starts with genuinely understanding the attack &#10024;</p>
+      <div class="links-cluster">
+        <a class="lc" href="https://www.linkedin.com/in/teresajencybala/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="lc" href="https://github.com/jencyyyyy" target="_blank" rel="noopener">GitHub</a>
+        <a class="lc" href="https://medium.com/@teresa11000" target="_blank" rel="noopener">Medium</a>
+        <a class="lc" href="https://linktr.ee/teresajencybala" target="_blank" rel="noopener">Linktree</a>
+        <a class="lc" href="https://www.fiverr.com/teresabala" target="_blank" rel="noopener">Fiverr</a>
+        <a class="lc" href="https://www.youtube.com/@studytimewithjency" target="_blank" rel="noopener">YouTube</a>
+        <a class="lc" href="mailto:teresajencybala.cse@gmail.com">Email</a>
+      </div>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-card"><div class="stat-n">30+</div><div class="stat-l">Websites Secured</div></div>
+      <div class="stat-card"><div class="stat-n">4.00</div><div class="stat-l">MSc TGPA at KU</div></div>
+      <div class="stat-card"><div class="stat-n">6</div><div class="stat-l">Publications</div></div>
+      <div class="stat-card"><div class="stat-n">3.65</div><div class="stat-l">BSc CGPA, Dean's List</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="sec-head"><span class="sec-num">02</span><h2 class="sec-title">Technical Skills</h2><div class="sec-line"></div><span class="sec-gem">&#10022;</span></div>
+  <div class="skills-grid fade-in">
+    <div class="sk-group"><div class="sk-label">Security and SIEM</div><div class="sk-tags"><span class="sk-tag">Wazuh</span><span class="sk-tag">Splunk</span><span class="sk-tag">BurpSuite</span><span class="sk-tag">Kali Linux</span><span class="sk-tag">VAPT</span><span class="sk-tag">OSINT</span><span class="sk-tag">Malware Removal</span><span class="sk-tag">TryHackMe</span></div></div>
+    <div class="sk-group"><div class="sk-label">Programming and Data</div><div class="sk-tags"><span class="sk-tag">Python</span><span class="sk-tag">NumPy</span><span class="sk-tag">Pandas</span><span class="sk-tag">Matplotlib</span><span class="sk-tag">Seaborn</span><span class="sk-tag">Java</span><span class="sk-tag">C / C++</span><span class="sk-tag">SQL</span></div></div>
+    <div class="sk-group"><div class="sk-label">Web and DevOps</div><div class="sk-tags"><span class="sk-tag">HTML/CSS/JS</span><span class="sk-tag">Laravel</span><span class="sk-tag">MySQL</span><span class="sk-tag">MongoDB</span><span class="sk-tag">Git / GitHub</span><span class="sk-tag">Postman</span><span class="sk-tag">WordPress</span></div></div>
+    <div class="sk-group"><div class="sk-label">Tools and Platforms</div><div class="sk-tags"><span class="sk-tag">Linux (Ubuntu)</span><span class="sk-tag">VMware / VBox</span><span class="sk-tag">Google Colab</span><span class="sk-tag">Jupyter</span><span class="sk-tag">VSCode</span><span class="sk-tag">MS Office</span><span class="sk-tag">Report Writing</span></div></div>
+  </div>
+</section>
+
+<section id="experience" class="alt-bg">
+  <div class="sec-head"><span class="sec-num">03</span><h2 class="sec-title">Experience</h2><div class="sec-line"></div><span class="sec-gem">&#128142;</span></div>
+  <div class="timeline fade-in">
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-date">Sep 2023 to Present</div>
+      <div class="tl-role">Freelance Cybersecurity Specialist</div>
+      <div class="tl-org">Fiverr, Level 1 Seller</div>
+      <div class="tl-body">Delivering web security solutions to clients globally. WordPress malware removal, full security hardening, Google blacklist removal, SEO spam cleanup, and VAPT engagements. Successfully secured 30+ compromised websites across IONOS and InMotion hosting.</div>
+      <div class="tl-chips"><span class="chip">WordPress Security</span><span class="chip">Malware Removal</span><span class="chip">VAPT</span><span class="chip">Blacklist Removal</span><span class="chip">SEO Spam</span></div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-date">Dec 2023 to Jan 2024</div>
+      <div class="tl-role">Security Intern</div>
+      <div class="tl-org">WebBattalion, Remote under CodemanBD</div>
+      <div class="tl-body">Hands-on experience in Red Team and Blue Team operations. Implemented Wazuh as SIEM/EDR, learned threat monitoring workflows, and applied defensive and offensive security techniques in a professional environment.</div>
+      <div class="tl-chips"><span class="chip">Wazuh</span><span class="chip">Red Team</span><span class="chip">Blue Team</span><span class="chip">SIEM / EDR</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="sec-head"><span class="sec-num">04</span><h2 class="sec-title">Education</h2><div class="sec-line"></div><span class="sec-gem">&#10022;</span></div>
+  <div class="edu-grid fade-in">
+    <div class="edu-card"><span class="edu-gem">&#9670;</span><div class="edu-deg">M.Sc. in Computer Science and Engineering</div><div class="edu-inst">Khulna University, Khulna, Bangladesh</div><div class="edu-pills"><span class="edu-pill">Jan 2025 to Present</span><span class="edu-pill">TGPA 4.00 / 4.00</span></div></div>
+    <div class="edu-card"><span class="edu-gem">&#9670;</span><div class="edu-deg">B.Sc. in Computer Science and Engineering</div><div class="edu-inst">Imperial College of Engineering, Khulna, Rajshahi University</div><div class="edu-pills"><span class="edu-pill">Jan 2019 to Oct 2024</span><span class="edu-pill">CGPA 3.65 / 4.00</span><span class="edu-pill">Dean's List</span></div></div>
+    <div class="edu-card"><span class="edu-gem">&#9670;</span><div class="edu-deg">Higher Secondary Certificate (HSC)</div><div class="edu-inst">Navy Anchorage School and College, Khulna, Science English</div><div class="edu-pills"><span class="edu-pill">2016 to 2018</span><span class="edu-pill">GPA 4.83 / 5.00</span></div></div>
+    <div class="edu-card"><span class="edu-gem">&#9670;</span><div class="edu-deg">Secondary School Certificate (SSC)</div><div class="edu-inst">Jalalabad Cantonment Public School and College, Sylhet, Science English</div><div class="edu-pills"><span class="edu-pill">2014 to 2016</span><span class="edu-pill">GPA 5.00 / 5.00</span></div></div>
+  </div>
+</section>
+
+<section id="projects" class="alt-bg">
+  <div class="sec-head"><span class="sec-num">05</span><h2 class="sec-title">Projects</h2><div class="sec-line"></div><span class="sec-gem">&#128142;</span></div>
+  <div class="proj-grid fade-in">
+    <div class="proj-card"><div class="proj-icon">&#128737;</div><div class="proj-title">Wazuh as SIEM and EDR</div><div class="proj-desc">Demonstrated Wazuh integration with Ubuntu and Windows to monitor traffic, detect threats, and visualize security events.</div><a class="proj-link" href="https://drive.google.com/file/d/1sc8DWv7PaE6pD3PvCRGU-TIAHR8XEBWs/view" target="_blank" rel="noopener">View Report</a></div>
+    <div class="proj-card"><div class="proj-icon">&#128275;</div><div class="proj-title">Blackbox Pentesting, OSCP Lab</div><div class="proj-desc">Full blackbox pentest on OSCP lab. Critical vulnerability: Local Admin Access via id_rsa key on a WordPress target.</div><a class="proj-link" href="https://drive.google.com/file/d/1WRvB0QsGs-DsLm4WVTiswqp9oH77kcPQ/view?usp=sharing" target="_blank" rel="noopener">View Report</a></div>
+    <div class="proj-card"><div class="proj-icon">&#127760;</div><div class="proj-title">Website Rebuild, libbyblair.com</div><div class="proj-desc">Recreated a site built with nulled plugins using Elementor and Forminator with full post-launch security hardening.</div><a class="proj-link" href="https://libbyblair.com/" target="_blank" rel="noopener">Visit Site</a></div>
+    <div class="proj-card"><div class="proj-icon">&#129529;</div><div class="proj-title">Website Security and Malware Removal</div><div class="proj-desc">Restored and hardened 30+ compromised websites including malware removal, defacement reversal, and backup automation.</div><a class="proj-link" href="https://docs.google.com/document/d/1yt7FntXdvAOGpPqT7M7Y1BRwH7Di7grrHGdDksVvEWQ/edit?usp=sharing" target="_blank" rel="noopener">Case Study</a></div>
+    <div class="proj-card"><div class="proj-icon">&#128250;</div><div class="proj-title">Study Time with Jency, YouTube</div><div class="proj-desc">Free undergraduate CS curriculum uploaded during COVID-19. Covers nearly all CSE courses for students across Bangladesh.</div><a class="proj-link" href="https://www.youtube.com/@studytimewithjency" target="_blank" rel="noopener">Watch Channel</a></div>
+  </div>
+</section>
+
+<section id="research">
+  <div class="sec-head"><span class="sec-num">06</span><h2 class="sec-title">Research and Publications</h2><div class="sec-line"></div><span class="sec-gem">&#10022;</span></div>
+  <div class="fade-in">
+    <div class="thesis-box">
+      <span class="thesis-lbl">THESIS</span>
+      <div class="thesis-title">Intrusion Detection using Machine Learning Algorithms</div>
+      <div class="thesis-meta">Undergraduate Thesis, Imperial College of Engineering Khulna, Rajshahi University, 2024</div>
+      <div class="thesis-desc">Investigated and applied multiple ML models for network intrusion detection. Evaluated classification accuracy, false positive rates, and model generalization across diverse attack categories. <a href="https://drive.google.com/file/d/1si4vnh1kqi-8HqRDPaDuTq4-wWkH-gP4/view?usp=sharing" target="_blank" rel="noopener" style="color:var(--accent2);font-family:'Space Mono',monospace;font-size:.72rem;text-decoration:none;">Highlights</a></div>
+    </div>
+    <span class="pub-lbl">Book Chapters 2025</span>
+    <div class="chap-grid">
+      <div class="chap-card"><div class="chap-pub">CRC Press 2025</div><div class="chap-title"><a href="http://dx.doi.org/10.1201/9781003568988-14" target="_blank" rel="noopener">Enhancing IoT Security: A Machine Learning Approach to Mitigate Diverse Attack Vectors</a></div></div>
+      <div class="chap-card"><div class="chap-pub">Routledge 2025</div><div class="chap-title"><a href="https://doi.org/10.1201/9781003644392-3" target="_blank" rel="noopener">Unlocking Neural Pathways: Large Language Models Pioneering Innovative Treatments in Neurodegenerative Diseases</a></div></div>
+      <div class="chap-card"><div class="chap-pub">Springer 2025</div><div class="chap-title"><a href="https://doi.org/10.1007/978-3-031-94386-7_7" target="_blank" rel="noopener">Implementation of Blockchain Technology in Feature Selection</a></div></div>
+      <div class="chap-card"><div class="chap-pub">Springer 2025</div><div class="chap-title"><a href="https://doi.org/10.1007/978-3-032-04315-3_8" target="_blank" rel="noopener">Practical Brain: Applications of Cognitive Neuroscience in Various Sectors</a></div></div>
+    </div>
+    <span class="pub-lbl">Additional Publications</span>
+    <div class="pub-list">
+      <div class="pub-item">
+        <div class="pub-year">2026</div>
+        <div>
+          <div class="pub-title"><a href="https://link.springer.com/chapter/10.1007/978-3-031-94386-7_5" target="_blank" rel="noopener">Meta-heuristic Algorithms for High-Dimensional Feature Selection: A Systematic Review of Methodologies, Applications, and Emerging Challenges with Future Research Directions</a></div>
+          <div class="pub-authors">Ayontika Das, Swan Mollick, Hirak Mondal, Teresa Jency Bala, Anindya Nag, Anindita Guho</div>
+          <div class="pub-venue">Feature Fusion for Next-Generation AI, pp 51-61, Springer</div>
+        </div>
+      </div>
+      <div class="pub-item">
+        <div class="pub-year">2025</div>
+        <div>
+          <div class="pub-title"><a href="https://www.taylorfrancis.com/chapters/edit/10.1201/9781003644392-15/generative-ai-revolution-neurodegenerative-disease-research-ayontika-das-hirak-mondal-teresa-jency-bala-akash-adhikary-anindya-nag" target="_blank" rel="noopener">The Generative AI Revolution in Neurodegenerative Disease Research: Navigating Challenges and Embracing Opportunities</a></div>
+          <div class="pub-authors">Ayontika Das, Hirak Mondal, Teresa Jency Bala, Akash Adhikary, Anindya Nag</div>
+          <div class="pub-venue">Generative AI in Neurology, pp 351-364, Taylor and Francis / Routledge</div>
+        </div>
+      </div>
+    </div>
+    <p style="margin-top:1.2rem;font-family:'Space Mono',monospace;font-size:.69rem;color:var(--ink2);">
+      View all 6 publications on <a href="https://scholar.google.com/citations?user=gsNwFVAAAAAJ&amp;hl=en" target="_blank" rel="noopener" style="color:var(--accent2);">Google Scholar</a> &nbsp; h-index: 1 &nbsp; Citations: 1
+    </p>
+  </div>
+</section>
+
+<section id="services" class="alt-bg">
+  <div class="sec-head"><span class="sec-num">07</span><h2 class="sec-title">Services</h2><div class="sec-line"></div><span class="sec-gem">&#128142;</span></div>
+  <div class="srv-grid fade-in">
+    <div class="srv-card"><div class="srv-icon">&#127919;</div><div class="srv-name">Penetration Testing</div><div class="srv-desc">VAPT on web apps, WordPress, and custom targets with detailed reporting.</div></div>
+    <div class="srv-card"><div class="srv-icon">&#129442;</div><div class="srv-name">Malware Removal</div><div class="srv-desc">Deep scanning and manual removal from infected WordPress servers.</div></div>
+    <div class="srv-card"><div class="srv-icon">&#128683;</div><div class="srv-name">Blacklist Removal</div><div class="srv-desc">Clean reputation and remove from Google Safe Browsing blocklists.</div></div>
+    <div class="srv-card"><div class="srv-icon">&#128373</div><div class="srv-name">OSINT and Recon</div><div class="srv-desc">Intelligence gathering on people, organisations, and digital assets.</div></div>
+    <div class="srv-card"><div class="srv-icon">&#128269;</div><div class="srv-name">SEO Spam Cleanup</div><div class="srv-desc">Remove injected spam redirects and restore organic search presence.</div></div>
+    <div class="srv-card"><div class="srv-icon">&#128202;</div><div class="srv-name">SIEM Solutions</div><div class="srv-desc">Wazuh and Splunk setup, rule config, and log analysis.</div></div>
+  </div>
+</section>
+
+<section id="certifications">
+  <div class="sec-head"><span class="sec-num">08</span><h2 class="sec-title">Certifications</h2><div class="sec-line"></div><span class="sec-gem">&#10022;</span></div>
+  <div class="cert-grid fade-in">
+    <a class="cert-item" href="https://drive.google.com/file/d/1_6eWjoLsxbDk3afqD0hLAiutUO8yjMiM/view?usp=sharing" target="_blank" rel="noopener">&#128142; Cybersecurity Professionals, ITBI CUET</a>
+    <a class="cert-item" href="https://www.credly.com/badges/4edf3fdd-8aad-47ee-be80-51799148745e/public_url" target="_blank" rel="noopener">&#128142; Cisco, Introduction to Cybersecurity</a>
+    <a class="cert-item" href="https://www.credly.com/badges/4edf3fdd-8aad-47ee-be80-51799148745e/public_url" target="_blank" rel="noopener">&#128142; Cyber Threat Intelligence 101</a>
+    <a class="cert-item" href="https://drive.google.com/file/d/1VjbJc_9-vHSgzyBnDlD3asBR8T4FRCBW/view?usp=sharing" target="_blank" rel="noopener">&#128142; CodeManBD Internship Certificate</a>
+    <a class="cert-item" href="https://drive.google.com/file/d/1iArvxWKKxblowhzSxJq3_qFlbY25e2Xw/view?usp=sharing" target="_blank" rel="noopener">&#128142; CodemanBD Course Completion</a>
+    <a class="cert-item" href="https://www.udemy.com/certificate/UC-761b2519-44e3-41e6-9679-b1b0db1084ae/" target="_blank" rel="noopener">&#128142; WordPress Malware Removal and Recovery</a>
+    <a class="cert-item" href="https://www.discount-courses.com/certificates/15dcxsmspl" target="_blank" rel="noopener">&#128142; Cyber Security: White-Hat Ethical Hacking</a>
+    <a class="cert-item" href="https://ostad.app/share/certificate/a13536-teresa-jency-bala" target="_blank" rel="noopener">&#128142; Data Science Certification, Ostad</a>
+    <a class="cert-item" href="https://www.udemy.com/certificate/UC-5d2c60b8-cc27-456e-9942-1cb4f602ec78/" target="_blank" rel="noopener">&#128142; Microsoft SQL for Beginners</a>
+    <a class="cert-item" href="https://www.udemy.com/certificate/UC-2268bbc0-db86-418c-b6b2-d484804ce2ed/" target="_blank" rel="noopener">&#128142; Master Git and GitHub, Beginner to Expert</a>
+    <a class="cert-item" href="https://www.credential.net/b3770ceb-44f8-40f3-a2fc-cfdb0d029fd8#acc.N8grdYTF" target="_blank" rel="noopener">&#128142; Frontend Fundamentals</a>
+    <a class="cert-item" href="https://drive.google.com/file/d/1mKE0hCl5zjcIxExXSL3jukntW8NNvquZ/view?usp=sharing" target="_blank" rel="noopener">&#128142; Ostad, Data Science</a>
+  </div>
+</section>
+
+<section id="achievements" class="alt-bg">
+  <div class="sec-head"><span class="sec-num">09</span><h2 class="sec-title">Achievements</h2><div class="sec-line"></div><span class="sec-gem">&#128142;</span></div>
+  <div class="ach-list fade-in">
+    <div class="ach-item"><span class="ach-ico">&#127942;</span><div class="ach-txt"><strong>PKI Hackathon 2025, 3rd Place (University Level)</strong><br/>CCA Department, ICT Division, Bangladesh. Ranked 1st in the preliminary round and placed 3rd at the university final.</div></div>
+    <div class="ach-item"><span class="ach-ico">&#11088;</span><div class="ach-txt"><strong>Level 1 Seller on Fiverr</strong><br/>Consistent delivery of web security and pentesting services for global clients, securing 30+ websites to date.</div></div>
+    <div class="ach-item"><span class="ach-ico">&#127891;</span><div class="ach-txt"><strong>Dean's List, Rajshahi University</strong><br/>GPA 3.8 in Semester 5 and 3.912 in Semester 6, averaging 3.856/4.00 across 3rd year undergraduate studies.</div></div>
+    <div class="ach-item"><span class="ach-ico">&#128161;</span><div class="ach-txt"><strong>ICPC Regional 2022, Participant</strong><br/>Team selected in the preliminary round and competed in the ICPC Regional hosted by Green University, Bangladesh.</div></div>
+  </div>
+</section>
+
+<section id="fun">
+  <div class="sec-head"><span class="sec-num">&#10022;</span><h2 class="sec-title">Off the Clock</h2><div class="sec-line"></div><span class="sec-gem">&#127918;</span></div>
+  <div class="fun-grid fade-in">
+    <a class="fun-card" href="https://www.youtube.com/@PetBuddies" target="_blank" rel="noopener"><span class="fun-icon">&#128062;</span><div><div class="fun-name">Pet Buddies</div><div class="fun-sub">YouTube, animals and pets</div></div></a>
+    <a class="fun-card" href="https://open.spotify.com/user/u8pp29kg15kpf9ndx3ds3lqy1" target="_blank" rel="noopener"><span class="fun-icon">&#127925;</span><div><div class="fun-name">Spotify</div><div class="fun-sub">What I am listening to</div></div></a>
+    <div class="fun-card" style="cursor:default"><span class="fun-icon">&#128661;</span><div><div class="fun-name">Crazy Taxi</div><div class="fun-sub">Casual play &#127918;</div></div></div>
+    <a class="fun-card" href="https://letterboxd.com/teresssa/" target="_blank" rel="noopener"><span class="fun-icon">&#127909;</span><div><div class="fun-name">Letterboxd</div><div class="fun-sub">Films I have watched</div></div></a>
+    <a class="fun-card" href="https://linktr.ee/teresajencybala" target="_blank" rel="noopener"><span class="fun-icon">&#127795;</span><div><div class="fun-name">Linktree</div><div class="fun-sub">All my links in one place</div></div></a>
+  </div>
+</section>
+
+<section id="contact" class="alt-bg">
+  <div class="sec-head" style="flex-direction:column;align-items:center;text-align:center;gap:.4rem;margin-bottom:2rem;">
+    <span class="sec-num">10</span>
+    <h2 class="sec-title shimmer-text">Get In Touch &#10024;</h2>
+  </div>
+  <div class="contact-wrap fade-in">
+    <p>Whether you have a security concern, a research collaboration, or just want to connect, my inbox is always open. Let us build something secure and brilliant together &#128142;</p>
+    <a class="contact-email" href="mailto:teresajencybala.cse@gmail.com">teresajencybala.cse [at] gmail.com</a>
+    <div class="contact-socials">
+      <a class="sp" href="https://www.linkedin.com/in/teresajencybala/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="sp" href="https://www.fiverr.com/teresabala" target="_blank" rel="noopener">Fiverr</a>
+      <a class="sp" href="https://www.upwork.com/freelancers/~0192f0471d432a4f82" target="_blank" rel="noopener">Upwork</a>
+      <a class="sp" href="https://medium.com/@teresa11000" target="_blank" rel="noopener">Medium</a>
+      <a class="sp" href="https://linktr.ee/teresajencybala" target="_blank" rel="noopener">Linktree</a>
+      <a class="sp" href="https://github.com/jencyyyyy" target="_blank" rel="noopener">GitHub</a>
+      <a class="sp" href="https://www.youtube.com/@studytimewithjency" target="_blank" rel="noopener">YouTube</a>
+      <a class="sp" href="https://scholar.google.com/citations?user=gsNwFVAAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
+      <a class="sp" href="https://www.researchgate.net/profile/Teresa-Bala" target="_blank" rel="noopener">ResearchGate</a>
+      <a class="sp" href="https://tryhackme.com/r/p/jencyyy" target="_blank" rel="noopener">TryHackMe</a>
+      <a class="sp" href="https://www.hackerrank.com/profile/jencyyy" target="_blank" rel="noopener">HackerRank</a>
+      <a class="sp" href="https://orcid.org/0009-0002-6670-9904" target="_blank" rel="noopener">ORCiD</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>2026 Teresa Jency Bala. Made with &#128142; and &#10024;</p>
+  <a href="#hero">Back to top</a>
+</footer>
+
+<script>
+var THEME_COLORS = {
+  blue:    ['#1e3a8a','#0d9488','#6d28d9','#2563eb','#14b8a6','#8b5cf6','#3b82f6','#5eead4','#c4b5fd'],
+  crimson: ['#c1121f','#1a3a8f','#c9820a','#f4a026','#e63946','#2563eb','#ff6b6b','#60a5fa','#ffd60a'],
+  dark:    ['#15803d','#16a34a','#22c55e','#34d399','#6ee7b7','#0d6c5a','#0f9174','#064e3b','#d97706']
+};
+var sparkleColors = THEME_COLORS.blue;
+
+function setTheme(t) {
+  document.documentElement.setAttribute('data-theme', t);
+  sparkleColors = THEME_COLORS[t];
+  var btns = document.querySelectorAll('.theme-btn');
+  for (var i = 0; i < btns.length; i++) { btns[i].classList.remove('active'); }
+  var active = document.querySelector('.theme-btn[data-theme="' + t + '"]');
+  if (active) active.classList.add('active');
+  try { localStorage.setItem('tj-theme', t); } catch(e) {}
+}
+
+var saved = '';
+try { saved = localStorage.getItem('tj-theme') || ''; } catch(e) {}
+if (saved === 'blue' || saved === 'crimson' || saved === 'dark') { setTheme(saved); }
+
+var btns = document.querySelectorAll('.theme-btn');
+for (var b = 0; b < btns.length; b++) {
+  (function(btn) {
+    btn.addEventListener('click', function() { setTheme(btn.getAttribute('data-theme')); });
+  })(btns[b]);
+}
+
+var canvas = document.getElementById('sparkle-canvas');
+var ctx = canvas.getContext('2d');
+var W = 0, H = 0;
+function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
+resize();
+window.addEventListener('resize', resize);
+
+var pts = [];
+for (var p = 0; p < 100; p++) {
+  pts.push({
+    x: Math.random() * window.innerWidth,
+    y: Math.random() * window.innerHeight,
+    r: Math.random() * 1.6 + 0.3,
+    vx: (Math.random() - 0.5) * 0.25,
+    vy: (Math.random() - 0.5) * 0.25,
+    ci: Math.floor(Math.random() * 9),
+    a: Math.random() * 0.45 + 0.15,
+    tw: Math.random() * Math.PI * 2,
+    tws: Math.random() * 0.022 + 0.007,
+    isDiam: Math.random() < 0.2
+  });
+}
+
+function drawDiam(cx, cy, s, col, al) {
+  ctx.save(); ctx.globalAlpha = al; ctx.fillStyle = col;
+  ctx.beginPath();
+  ctx.moveTo(cx, cy - s); ctx.lineTo(cx + s * 0.6, cy);
+  ctx.lineTo(cx, cy + s); ctx.lineTo(cx - s * 0.6, cy);
+  ctx.closePath(); ctx.fill(); ctx.restore();
+}
+
+function loop() {
+  ctx.clearRect(0, 0, W, H);
+  for (var i = 0; i < pts.length; i++) {
+    var pt = pts[i];
+    pt.x += pt.vx; pt.y += pt.vy; pt.tw += pt.tws;
+    var a = pt.a * (0.4 + 0.6 * Math.sin(pt.tw));
+    if (pt.x < 0) pt.x = W; if (pt.x > W) pt.x = 0;
+    if (pt.y < 0) pt.y = H; if (pt.y > H) pt.y = 0;
+    var col = sparkleColors[pt.ci];
+    if (pt.isDiam) { drawDiam(pt.x, pt.y, pt.r * 2.5, col, a); }
+    else {
+      ctx.save(); ctx.globalAlpha = a; ctx.fillStyle = col;
+      ctx.shadowBlur = 5; ctx.shadowColor = col;
+      ctx.beginPath(); ctx.arc(pt.x, pt.y, pt.r, 0, Math.PI * 2);
+      ctx.fill(); ctx.restore();
+    }
+  }
+  requestAnimationFrame(loop);
+}
+loop();
+
+var fadeEls = document.querySelectorAll('.fade-in');
+var obs = new IntersectionObserver(function(entries) {
+  for (var i = 0; i < entries.length; i++) {
+    if (entries[i].isIntersecting) entries[i].target.classList.add('visible');
+  }
+}, { threshold: 0.08 });
+for (var f = 0; f < fadeEls.length; f++) { obs.observe(fadeEls[f]); }
+
+var allSecs = document.querySelectorAll('section[id]');
+var navAs = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll', function() {
+  var cur = '';
+  for (var i = 0; i < allSecs.length; i++) {
+    if (window.scrollY >= allSecs[i].offsetTop - 120) cur = allSecs[i].id;
+  }
+  for (var j = 0; j < navAs.length; j++) {
+    navAs[j].style.color = (navAs[j].getAttribute('href') === '#' + cur) ? 'var(--hover-col)' : '';
+  }
+});
+</script>
+</body>
+</html>
